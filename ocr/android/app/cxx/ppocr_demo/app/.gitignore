@@ -1,1 +1,6 @@
 /build
+/.cxx/*
+/cache/*
+/OpenCV/*
+/PaddleLite/*
+/src/main/assets/*

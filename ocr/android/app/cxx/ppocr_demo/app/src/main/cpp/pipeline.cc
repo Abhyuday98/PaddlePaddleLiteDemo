@@ -205,6 +205,14 @@ void Pipeline::VisualizeStatus(double readGLFBOTime, double writeGLTextureTime,
   offset.y += text_size.height;
   cv::putText(*rgbaImage, text, offset, font_face, font_scale, color,
               thickness);
+
+//  Visualize rec text and Score
+    for (int i = 0; i < rec_text.size(); i++) {
+        sprintf(text, "line: %d %s  %f", i, rec_text[i].c_str(), rec_text_score[i]);
+        offset.y += text_size.height;
+        cv::putText(*rgbaImage, text, offset, font_face, font_scale, color,
+                    thickness);
+    }
 }
 
 Pipeline::Pipeline(const std::string &detModelDir,
